@@ -50,12 +50,16 @@ export async function sendContact(
   }
 
   const from = process.env.RESEND_FROM || `${site.brand} <onboarding@resend.dev>`;
+  // Default destination is site.contactEmail. CONTACT_TO overrides it without
+  // a code change — used while Resend is in sandbox mode (can only deliver to
+  // the account owner's address). Clear it once a domain is verified.
+  const to = process.env.CONTACT_TO?.trim() || site.contactEmail;
 
   try {
     const resend = new Resend(apiKey);
     const { error } = await resend.emails.send({
       from,
-      to: site.contactEmail,
+      to,
       replyTo: email,
       subject: `New ${site.brand} enquiry — ${company || name}`,
       text: [
