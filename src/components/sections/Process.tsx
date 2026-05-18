@@ -3,8 +3,8 @@ import { AnimatedSection, AnimatedItem } from "@/components/ui/Animated";
 const STEPS = [
   {
     n: "01",
-    t: "Brief & product",
-    d: "You send the product, the launch date, and where the films will run. We come back with a creative direction.",
+    t: "Brief & capture",
+    d: "We capture your product — ship it to us or we shoot it on location — with the launch date and where the films will run. You get a creative direction back.",
   },
   {
     n: "02",

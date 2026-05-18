@@ -9,11 +9,14 @@
  * pre-filled email so the funnel works with zero backend.
  */
 export const site = {
-  brand: "MOTIVE",
+  /** Company name (the wordmark). */
+  brand: "AURELIA",
   brandTag: "CINEMATIC AD STUDIO",
+  /** Live domain — the company is Aurelia; the site is aureliadigital. */
+  domain: "aureliadigital.co.uk",
   /** Who we sell to — used in supporting copy. */
   audience: "DTC product brands",
-  email: "hello@motive.studio",
+  email: "hello@aureliadigital.co.uk",
   ctaLabel: "Request a quote",
   /** In-page anchor used by mid-page CTAs to jump to the quote block. */
   quoteAnchor: "#quote",

@@ -15,7 +15,7 @@ const WHY = [
   {
     k: "Premium perception",
     t: "Look like the category leader",
-    d: "Render-grade production makes a young brand read as established — before you've spent on a shoot.",
+    d: "Render-grade production makes a young brand read as established — without a full-scale production budget.",
   },
   {
     k: "Performance-ready",
@@ -123,7 +123,7 @@ export default function Home() {
 
           <footer className="mt-20 flex flex-col gap-2 border-t border-[var(--line)] pt-8 font-mono text-xs tracking-[0.2em] text-faint md:flex-row md:items-center md:justify-between">
             <span>
-              {site.brand} — {site.brandTag}
+              {site.brand} — {site.domain}
             </span>
             <span>
               CINEMATIC ADS FOR {site.audience.toUpperCase()} ·{" "}

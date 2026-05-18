@@ -33,7 +33,7 @@ const ANNOTATIONS = [
     hide: 0.97,
     eyebrow: "03 — Launch in weeks",
     title: "Product to film in 2–4 weeks",
-    body: "No film crew, no studio day, no location budget. Rendered in 3D, delivered ready to run.",
+    body: "We capture your real product, then build the world around it in 3D. Finished films in weeks — not a months-long production.",
     pos: "right-6 bottom-24 md:right-12 md:bottom-28",
   },
 ] as const;

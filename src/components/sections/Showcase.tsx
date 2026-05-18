@@ -14,8 +14,8 @@ const SCENES = [
     show: 0.16,
     hide: 0.38,
     eyebrow: "01 — The surface",
-    title: "Your product, hero-lit in a place that doesn't exist",
-    body: "Pure art direction, zero location cost. No flights, no permits, no weather — just the perfect set, rendered.",
+    title: "Your real product, in a place that doesn't exist",
+    body: "We capture your product in studio or on location, then drop it into a world built in 3D — no flights, no permits, no weather.",
     pos: "left-6 top-28 md:left-12 md:top-32",
   },
   {
@@ -112,8 +112,8 @@ export default function Showcase() {
             <span className="text-gradient">worlds</span> around them.
           </h2>
           <p className="mt-6 max-w-[46ch] text-base leading-relaxed text-white/75 drop-shadow-[0_2px_16px_rgba(0,0,0,0.6)] md:text-lg">
-            Scroll into a brand world rendered entirely in 3D — the depth and
-            polish a real shoot can&apos;t buy at any budget.
+            Scroll into a brand world built in 3D around your real product —
+            depth and polish a location shoot can&apos;t buy at any budget.
           </p>
         </div>
 

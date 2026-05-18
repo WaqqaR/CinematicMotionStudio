@@ -8,6 +8,7 @@ const TIERS = [
     tagline: "One cinematic hero film.",
     for: "Best for a single product or a focused launch.",
     items: [
+      "Remote or on-site product capture",
       "1 hero film (15–30s)",
       "3 vertical cutdowns (9:16)",
       "1 round of revisions",
@@ -20,6 +21,7 @@ const TIERS = [
     tagline: "A launch built to perform.",
     for: "Best for a full go-to-market across paid social.",
     items: [
+      "On-site product capture day",
       "Hero film + teaser",
       "6+ paid cutdowns (9:16 / 1:1 / 16:9)",
       "Thumbnail & still frames",
@@ -33,6 +35,7 @@ const TIERS = [
     tagline: "An ownable cinematic universe.",
     for: "Best for brands making film a long-term channel.",
     items: [
+      "Dedicated product capture + still library",
       "Bespoke 3D brand world",
       "Film library (3+ films)",
       "Seasonal refresh option",
@@ -63,9 +66,10 @@ export default function Offerings() {
           </AnimatedItem>
           <AnimatedItem>
             <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
-              Every engagement is scoped to your product and launch. Pricing is
-              quoted per project — pick the shape that fits and we&apos;ll send
-              numbers within a day.
+              Capturing your product — shipped to our studio or shot on
+              location — is included in every tier. Pricing is quoted per
+              project; pick the shape that fits and we&apos;ll send numbers
+              within a day.
             </p>
           </AnimatedItem>
         </AnimatedSection>
