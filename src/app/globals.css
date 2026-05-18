@@ -1,26 +1,144 @@
 @import "tailwindcss";
 
+/* ============================================================
+   Design tokens — neumorphic, cinematic warm accent
+   ============================================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surface / neutrals (zinc scale) */
+  --background: #e9e9ee;
+  --surface: #ececf1;
+  --foreground: #18181b; /* zinc-900 */
+  --muted: #52525b; /* zinc-600 */
+  --faint: #a1a1aa; /* zinc-400 */
+  --line: rgba(24, 24, 27, 0.08);
+
+  /* Warm cinematic accent (matches the gold/amber footage) */
+  --accent: #f59e0b; /* amber-500 */
+  --accent-2: #f97316; /* orange-500 */
+  --accent-3: #e11d48; /* rose-600 */
+
+  /* Neumorphic shadow stack: 6 layered outer + inset highlight.
+     Tuned for the --surface tone. Do not collapse into one shadow. */
+  --neu:
+    20px 20px 44px rgba(163, 163, 170, 0.55),
+    -16px -16px 40px rgba(255, 255, 255, 0.95),
+    8px 8px 16px rgba(163, 163, 170, 0.30),
+    -6px -6px 14px rgba(255, 255, 255, 0.80),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.70),
+    inset -1px -1px 2px rgba(163, 163, 170, 0.25);
+
+  --neu-sm:
+    8px 8px 18px rgba(163, 163, 170, 0.50),
+    -7px -7px 16px rgba(255, 255, 255, 0.92),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.65);
+
+  --neu-inset:
+    inset 7px 7px 14px rgba(163, 163, 170, 0.55),
+    inset -7px -7px 14px rgba(255, 255, 255, 0.95);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Lenis smooth-scroll wiring */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ============================================================
+   Primitives
+   ============================================================ */
+.neu {
+  background: var(--surface);
+  box-shadow: var(--neu);
+}
+.neu-sm {
+  background: var(--surface);
+  box-shadow: var(--neu-sm);
+}
+.neu-inset {
+  background: var(--surface);
+  box-shadow: var(--neu-inset);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+.glass-dark {
+  background: rgba(9, 9, 11, 0.55);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--accent) 0%,
+    var(--accent-2) 45%,
+    var(--accent-3) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============================================================
+   Scroll-animation section heights (responsive)
+   ============================================================ */
+.scroll-animation {
+  height: 460vh;
+}
+@media (max-width: 1024px) {
+  .scroll-animation {
+    height: 360vh;
+  }
+}
+@media (max-width: 768px) {
+  .scroll-animation {
+    height: 320vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
 }
