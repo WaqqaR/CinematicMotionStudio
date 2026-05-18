@@ -1,10 +1,10 @@
-import { ArrowUpRight } from "@phosphor-icons/react/ssr";
 import Hero from "@/components/sections/Hero";
 import Showcase from "@/components/sections/Showcase";
 import Offerings from "@/components/sections/Offerings";
 import Process from "@/components/sections/Process";
+import ContactForm from "@/components/sections/ContactForm";
 import { AnimatedSection, AnimatedItem } from "@/components/ui/Animated";
-import { site, quoteHref } from "@/lib/site";
+import { site } from "@/lib/site";
 
 const WHY = [
   {
@@ -80,7 +80,7 @@ export default function Home() {
         className="relative overflow-hidden scroll-mt-24 px-6 pb-28 md:px-12 md:pb-40"
       >
         <div className="mx-auto max-w-[1400px]">
-          <AnimatedSection className="neu rounded-[28px] px-7 py-16 text-center md:px-16 md:py-24">
+          <AnimatedSection className="mx-auto max-w-2xl text-center">
             <AnimatedItem>
               <p className="font-mono text-xs uppercase tracking-[0.35em] text-accent-2">
                 Start your project
@@ -98,37 +98,33 @@ export default function Home() {
                 day.
               </p>
             </AnimatedItem>
-            <AnimatedItem>
-              <div className="mt-12 flex flex-col items-center gap-4">
-                <a
-                  href={quoteHref}
-                  className="group inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-sm font-semibold tracking-tight text-background transition-transform duration-300 hover:-translate-y-0.5 active:translate-y-0"
-                >
-                  {site.ctaLabel}
-                  <ArrowUpRight
-                    size={18}
-                    weight="bold"
-                    className="text-accent-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
-                </a>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="font-mono text-xs tracking-[0.2em] text-faint underline-offset-4 hover:text-muted hover:underline"
-                >
-                  {site.email}
-                </a>
-              </div>
-            </AnimatedItem>
           </AnimatedSection>
 
-          <footer className="mt-20 flex flex-col gap-2 border-t border-[var(--line)] pt-8 font-mono text-xs tracking-[0.2em] text-faint md:flex-row md:items-center md:justify-between">
-            <span>
-              {site.brand} — {site.domain}
-            </span>
-            <span>
-              CINEMATIC ADS FOR {site.audience.toUpperCase()} ·{" "}
-              {new Date().getFullYear()}
-            </span>
+          <div className="mt-14">
+            <ContactForm />
+          </div>
+
+          <footer className="mt-20 border-t border-[var(--line)] pt-8 font-mono text-xs tracking-[0.2em] text-faint">
+            <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+              <span>
+                {site.brand} — {site.domain}
+              </span>
+              <span>
+                CINEMATIC ADS FOR {site.audience.toUpperCase()} ·{" "}
+                {new Date().getFullYear()}
+              </span>
+            </div>
+            <p className="mt-6 text-faint/80">
+              An {site.brand} offering · part of{" "}
+              <a
+                href={site.parent.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline-offset-4 hover:text-muted hover:underline"
+              >
+                {site.parent.name}
+              </a>
+            </p>
           </footer>
         </div>
       </section>

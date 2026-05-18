@@ -1,6 +1,6 @@
 import { Check, ArrowUpRight } from "@phosphor-icons/react/ssr";
 import { AnimatedSection, AnimatedItem } from "@/components/ui/Animated";
-import { site, quoteHref } from "@/lib/site";
+import { site } from "@/lib/site";
 
 const TIERS = [
   {
@@ -114,7 +114,7 @@ export default function Offerings() {
                 </ul>
 
                 <a
-                  href={quoteHref}
+                  href={site.quoteAnchor}
                   className={`group mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold tracking-tight transition-transform duration-300 hover:-translate-y-0.5 ${
                     t.featured
                       ? "bg-foreground text-background"
