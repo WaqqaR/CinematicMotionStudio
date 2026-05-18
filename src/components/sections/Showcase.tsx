@@ -2,6 +2,7 @@
 
 import { useCallback, useRef, useState } from "react";
 import { useFrameSequence } from "./useFrameSequence";
+import { site } from "@/lib/site";
 
 const FRAME_COUNT = 151;
 const framePath = (i: number) =>
@@ -13,26 +14,26 @@ const SCENES = [
     show: 0.16,
     hide: 0.38,
     eyebrow: "01 — The surface",
-    title: "An island that only exists in render",
-    body: "Modeled, lit and color-graded to feel shot on location. Nothing here was ever filmed.",
+    title: "Your product, hero-lit in a place that doesn't exist",
+    body: "Pure art direction, zero location cost. No flights, no permits, no weather — just the perfect set, rendered.",
     pos: "left-6 top-28 md:left-12 md:top-32",
   },
   {
     id: "threshold",
     show: 0.44,
     hide: 0.66,
-    eyebrow: "02 — The threshold",
-    title: "The waterline is the edit",
-    body: "One continuous descent, frame-locked to your scroll. No cut — you control the dive.",
+    eyebrow: "02 — The dive",
+    title: "One unbroken move from packshot to story",
+    body: "The scroll is the edit; the viewer is the camera. They don't watch the ad — they move through it.",
     pos: "right-6 top-1/2 -translate-y-1/2 md:right-12",
   },
   {
     id: "depth",
     show: 0.72,
     hide: 0.97,
-    eyebrow: "03 — The depth",
-    title: "A living reef of detail",
-    body: "The payoff you scroll all the way down for. This is what world-building buys you.",
+    eyebrow: "03 — The detail",
+    title: "The production value that 10x's perceived price",
+    body: "Reef-level finish. This is what makes a $20 product feel like a $200 one — and convert like it.",
     pos: "left-6 bottom-24 md:left-12 md:bottom-28",
   },
 ] as const;
@@ -84,10 +85,10 @@ export default function Showcase() {
         {/* Section label */}
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center justify-between px-6 py-6 mix-blend-difference md:px-12">
           <span className="font-mono text-sm font-medium tracking-[0.3em] text-white">
-            SELECTED WORLD
+            SELECTED WORK
           </span>
           <span className="hidden font-mono text-xs tracking-[0.25em] text-white sm:block">
-            OCEAN / RENDER 002
+            {site.brand} / BRAND WORLD 002
           </span>
         </div>
 
@@ -106,13 +107,13 @@ export default function Showcase() {
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             Second sequence · {FRAME_COUNT} frames
           </span>
-          <h2 className="max-w-[16ch] text-4xl font-semibold leading-[1.04] tracking-tighter text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.55)] sm:text-6xl md:text-7xl">
-            We don&apos;t shoot scenes. We build{" "}
-            <span className="text-gradient">worlds</span>.
+          <h2 className="max-w-[18ch] text-4xl font-semibold leading-[1.04] tracking-tighter text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.55)] sm:text-6xl md:text-7xl">
+            We don&apos;t film products. We build{" "}
+            <span className="text-gradient">worlds</span> around them.
           </h2>
-          <p className="mt-6 max-w-[44ch] text-base leading-relaxed text-white/75 drop-shadow-[0_2px_16px_rgba(0,0,0,0.6)] md:text-lg">
-            Keep scrolling to dive beneath the surface — one unbroken shot,
-            rendered frame by frame.
+          <p className="mt-6 max-w-[46ch] text-base leading-relaxed text-white/75 drop-shadow-[0_2px_16px_rgba(0,0,0,0.6)] md:text-lg">
+            Scroll into a brand world rendered entirely in 3D — the depth and
+            polish a real shoot can&apos;t buy at any budget.
           </p>
         </div>
 
@@ -147,7 +148,7 @@ export default function Showcase() {
         {!loaded && (
           <div className="absolute inset-0 z-40 flex flex-col items-center justify-center bg-[#062b34]">
             <span className="mb-8 font-mono text-xs uppercase tracking-[0.4em] text-white/50">
-              SELECTED WORLD
+              {site.brand}
             </span>
             <div className="h-px w-64 overflow-hidden bg-white/15">
               <div

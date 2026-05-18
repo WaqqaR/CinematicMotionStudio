@@ -30,7 +30,14 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code} %{size_download}B\\\\n\" http://localhost:3002/frames/frame_0151.jpg)",
       "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type} %{size_download}B\\\\n\" http://localhost:3002/ocean-frames/frame_0001.jpg)",
       "Bash(curl -s -o /dev/null -w \"%{http_code} %{size_download}B\\\\n\" http://localhost:3002/ocean-frames/frame_0151.jpg)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3002/frames/frame_0120.jpg)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3002/frames/frame_0120.jpg)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git ls-remote *)",
+      "Bash(git count-objects *)",
+      "Bash(git push *)",
+      "Bash(git add *)",
+      "Bash(git -c user.email=waqqarahmed4@gmail.com -c user.name=WaqqaR commit -q -m ' *)"
     ]
   }
 }

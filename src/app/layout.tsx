@@ -3,11 +3,12 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "AURELIA — Cinematic Motion Studio",
+  title: `${site.brand} — Cinematic ads for ${site.audience}`,
   description:
-    "We direct cinematic story worlds, frame by frame. A scroll-driven canvas hero built on a hand-graded image sequence.",
+    "We turn your product into a cinematic film built to sell — scroll-stopping ads, rendered in 3D and delivered paid-ready in weeks.",
 };
 
 export default function RootLayout({

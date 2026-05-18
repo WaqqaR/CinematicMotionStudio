@@ -2,6 +2,7 @@
 
 import { useCallback, useRef, useState } from "react";
 import { useFrameSequence } from "./useFrameSequence";
+import { site } from "@/lib/site";
 
 const FRAME_COUNT = 151;
 const framePath = (i: number) =>
@@ -9,30 +10,30 @@ const framePath = (i: number) =>
 
 const ANNOTATIONS = [
   {
-    id: "craft",
+    id: "stop",
     show: 0.14,
     hide: 0.36,
-    eyebrow: "01 — The craft",
-    title: "151 frames, scrubbed to your scroll",
-    body: "No <video> tag, no jank. A hand-graded image sequence painted onto a single canvas, driven by your momentum.",
+    eyebrow: "01 — Scroll-stopping",
+    title: "Engineered for the first 3 seconds",
+    body: "We design the exact frame that kills the thumb-stop. Your product, on screen, impossible to skip past.",
     pos: "left-6 bottom-24 md:left-12 md:bottom-28",
   },
   {
-    id: "pipeline",
+    id: "convert",
     show: 0.42,
     hide: 0.64,
-    eyebrow: "02 — The pipeline",
-    title: "Rendered offline, delivered as an engine",
-    body: "Sequenced frame-by-frame, preloaded with a real progress bar, pinned sticky so it holds 60fps on mobile Safari.",
+    eyebrow: "02 — Made to convert",
+    title: "Every cut mapped to the buy",
+    body: "One hero film plus paid-ready cutdowns for every placement — built around the decision, not just the look.",
     pos: "right-6 top-28 md:right-12 md:top-32",
   },
   {
-    id: "legacy",
+    id: "speed",
     show: 0.7,
     hide: 0.97,
-    eyebrow: "03 — The vision",
-    title: "The frame people can't unsee",
-    body: "Worlds built to live behind the eye long after the scroll ends. We direct the moment that lingers.",
+    eyebrow: "03 — Launch in weeks",
+    title: "Product to film in 2–4 weeks",
+    body: "No film crew, no studio day, no location budget. Rendered in 3D, delivered ready to run.",
     pos: "right-6 bottom-24 md:right-12 md:bottom-28",
   },
 ] as const;
@@ -87,10 +88,10 @@ export default function Hero() {
         {/* Top bar — reads on dark & light via mix-blend-difference */}
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center justify-between px-6 py-6 mix-blend-difference md:px-12">
           <span className="font-mono text-sm font-medium tracking-[0.3em] text-white">
-            AURELIA
+            {site.brand}
           </span>
           <span className="hidden font-mono text-xs tracking-[0.25em] text-white sm:block">
-            CINEMATIC MOTION STUDIO
+            {site.brandTag}
           </span>
         </div>
 
@@ -108,22 +109,25 @@ export default function Hero() {
         >
           <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.3em] text-white/80 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-            Scroll-driven · {FRAME_COUNT} frames
+            Cinematic ads for {site.audience}
           </span>
-          <h1 className="max-w-[15ch] text-5xl font-semibold leading-[1.02] tracking-tighter text-white sm:text-7xl md:text-8xl">
-            Every story starts behind the{" "}
-            <span className="text-gradient">eye</span>.
+          <h1 className="max-w-[16ch] text-5xl font-semibold leading-[1.02] tracking-tighter text-white sm:text-7xl md:text-8xl">
+            Make them <span className="text-gradient">stop scrolling</span>.
           </h1>
           <p className="mt-6 max-w-[46ch] text-base leading-relaxed text-white/65 md:text-lg">
-            We render whole worlds offline, then scrub them to your scroll on a
-            single canvas. No video. No jank. Just the frame you remember.
+            We turn your product into a cinematic film built to sell — the kind
+            of ad people screenshot, share, and buy from.
           </p>
-          <div className="mt-12 flex flex-col items-center gap-3 text-white/50">
-            <span className="font-mono text-[11px] uppercase tracking-[0.35em]">
-              Scroll to look closer
-            </span>
-            <span className="flex h-10 w-6 items-start justify-center rounded-full border border-white/25 p-1.5">
-              <span className="h-2 w-1 animate-bounce rounded-full bg-white/70" />
+          <div className="mt-10 flex flex-col items-center gap-5">
+            <a
+              href={site.quoteAnchor}
+              className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold tracking-tight text-[#05060a] transition-transform duration-300 hover:-translate-y-0.5"
+            >
+              {site.ctaLabel}
+              <span className="text-accent-2">↗</span>
+            </a>
+            <span className="font-mono text-[11px] uppercase tracking-[0.35em] text-white/45">
+              or scroll to see the work
             </span>
           </div>
         </div>
@@ -160,7 +164,7 @@ export default function Hero() {
       {!loaded && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#05060a]">
           <span className="mb-8 font-mono text-xs uppercase tracking-[0.4em] text-white/50">
-            AURELIA
+            {site.brand}
           </span>
           <div className="h-px w-64 overflow-hidden bg-white/15">
             <div
