@@ -43,3 +43,4 @@ next-env.d.ts
 # project-local (not needed in the repo)
 /3d-scroll-website-skill-pack
 /dev-server.log
+.claude/
